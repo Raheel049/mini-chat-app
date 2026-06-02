@@ -20,9 +20,9 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-      <body className={inter.className} suppressHydrationWarning>
+        <body className={inter.className} suppressHydrationWarning>
 
-       <ThemeProvider
+          <ThemeProvider
             attribute="class"
             defaultTheme="dark"
             enableSystem
@@ -31,8 +31,8 @@ export default function RootLayout({
             {children}
             <Toaster />
           </ThemeProvider>
-      </body>
-    </html>
+        </body>
+      </html>
     </ClerkProvider>
   );
 }
