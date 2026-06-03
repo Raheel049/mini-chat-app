@@ -12,6 +12,8 @@ import UpgradeCard from '../sidebar/upgrade'
 import { LogoSmall } from '@/svgs/logo-small'
 import CreateAutomation from '../create-automation'
 import Search from "../search"
+import { Notifications } from './notifications'
+import MainBreadCrumb from '../main-bread-crumb'
 
 type Props = {
     slug: string
@@ -27,19 +29,19 @@ const Navbar = ({ slug }: Props) => {
                 <Sheet trigger={<Menu />} className="lg:hidden" side='left'>
                 <div
       className='flex
-  flex-col
-  gap-y-2
-  w-full
-  h-full
-  p-3
-  bg-[#0e0e0e]
-  bg-opacity-90
-  bg-clip-padding
-  backdrop-filter
-  backdrop--blur_safari
-  backdrop-blur-3xl
-  '
-    >
+                 flex-col
+                 gap-y-2
+                 w-full
+                 h-full
+                 p-3
+                 bg-[#0e0e0e]
+                 bg-opacity-90
+                 bg-clip-padding
+                 backdrop-filter
+                 backdrop--blur_safari
+                 backdrop-blur-3xl
+                 '
+                   >
       <div className='flex 
     gap-x-2 
     items-center 
@@ -83,8 +85,11 @@ const Navbar = ({ slug }: Props) => {
         </span>
         <Search />
         <CreateAutomation />
+        <Notifications />
     </div>
-    </div >
+    <MainBreadCrumb page={page === slug ? "Home" : page} slug={slug} />
+
+    </div>
 
 }
 
