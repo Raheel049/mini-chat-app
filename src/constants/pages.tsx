@@ -2,8 +2,8 @@ import { Activity, Contact, Home, Rocket, Settings } from "lucide-react"
 
 export const PAGE_BREAD_CRUMBS: string[] = [
     'contacts',
-    'automation',
-    'integration',
+    'automations',
+    'integrations',
     'settings',
 ]
 
@@ -12,11 +12,11 @@ type Props = {
 }
 
 export const PAGE_ICON: Props = {
-    AUTOMATIONS: <Activity />,
+    AUTOMATIONS: <Activity color="#3352CC"/>,
     CONTACTS: <Contact />,
-    INGRATIONS: <Rocket />,
-    SETTINGS: <Settings />,
-    HOME: <Home color="#3352CC" fill="3352CC"/>
+    INTEGRATIONS: <Rocket color="#3352CC" fill="#3352CC"/>,
+    SETTINGS: <Settings color="#3352CC" fill="#3352CC" />,
+    HOME: <Home color="#3352CC" fill="#3352CC"/>
 }
 
 export const PLANS = [
@@ -24,7 +24,7 @@ export const PLANS = [
         name: "Free Plan",
         description: 'Perfect for getting started',
         price:'$0',
-        featuers: [
+        features: [
             'Boost engagement with target response',
             'Automate comment replies to enhance audience interaction',
             'Trun followers into customer with targeted messaging',
@@ -36,7 +36,7 @@ export const PLANS = [
         name: "Smart AI Plan",
         description: 'Advanced features for poer users',
         price:'$99',
-        featuers: [
+        features: [
             'All features from free plan',
             'AI-powered response generation',
             'Advanced analytics and insights',
