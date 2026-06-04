@@ -22,12 +22,12 @@ const PaymentCard = ({ label, current, landing }: Props) => {
         )}>
             {landing ? (
                 <h2 className='text-2xl'>
-                    {label === "PRO" && 'Premium Plane'}
+                    {label === "PRO" && 'Premium Plan'}
                     {label === 'FREE' && 'Standard'}
                 </h2>
             ) : (
                 <h2 className='text-2xl'>
-                    {label === current ? 'Your Current Plane' : current === "PRO" ? 'Downgrade' : 'Upgrade'}
+                    {label === current ? 'Your Current Plan' : current === "PRO" ? 'Downgrade' : 'Upgrade'}
                 </h2>
             )}
             <p className='text-text-secondary text-sm mb-2'>
