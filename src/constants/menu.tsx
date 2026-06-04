@@ -19,13 +19,13 @@ export const SIDEBAR_MENU : SideBarProps[] =[
 
     {
         id: uuid(),
-        label : "user",
-        icon : <User className="h-[15px]"/>
+        label : "automations",
+        icon : <Activity className="h-[15px]"/>
     },
 
     {
         id: uuid(),
-        label : "rocket",
+        label : "integrations",
         icon : <Rocket className="h-[15px]"/>
     },
 

@@ -19,6 +19,12 @@ const config = {
     },
     extend: {
       colors: {
+        'text-secondary': '#79797A',
+        'keyword-purple': '#721DD1',
+        'keyword-green': '#31DF90',
+        'keyword-yellow': '#D6C720',
+        'background-80': '#21221B',
+        'keyword-red': '#FE0301',
         border: "hsl(var(--border))", // YEH HAI MAIN FIX! Isse border-border chalega
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
