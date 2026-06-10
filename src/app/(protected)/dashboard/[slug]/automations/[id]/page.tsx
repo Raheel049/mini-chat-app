@@ -1,3 +1,4 @@
+import { getAutomationInfo } from '@/action/automations'
 import Trigger from '@/components/global/automations/trigger'
 import AutomationsBreadCrumb from '@/components/global/bread-crumbs/automations'
 import { FileWarning } from 'lucide-react'
@@ -8,6 +9,11 @@ type Props = {
 }
 
 //WIP: save some matadata
+export async function generateMetaData({params,}: {
+  params: {id: string}
+}){
+  const info =  await getAutomationInfo(params.id)
+}
 
 const Page = ({params}: Props) => {
     //WIP: prefetch user automation data
