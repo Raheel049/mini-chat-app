@@ -5,6 +5,8 @@ type Props = {
 }
 
 const Trigger = ({id}: Props) => {
+
+  
   return (
     <div>Trigger</div>
   )
