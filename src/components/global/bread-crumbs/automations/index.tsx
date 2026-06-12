@@ -16,6 +16,7 @@ type Props = {
 const AutomationsBreadCrumb = ({ id }: Props) => {
   const { data } = useQueryAutomation(id)
   const { edit, enableEdit, inputRef, isPending } = useEditAutomation(id)
+  console.log(inputRef.current?.value)
 
   const { latestVariable } = useMutationDataState(['update-automation'])
   // User mutation stuff to update the autmation
@@ -28,10 +29,9 @@ const AutomationsBreadCrumb = ({ id }: Props) => {
 
           {edit ? (
             <Input
+              type='text'
               ref={inputRef}
-              placeholder={
-                isPending ? latestVariable.variables : 'Add a new name'
-              }
+              placeholder={ 'Add a new name'}
               className='bg-transparent h-auto outline-none text-base border-none p-0'
             />
 
@@ -40,10 +40,7 @@ const AutomationsBreadCrumb = ({ id }: Props) => {
           )}
          {edit? (<></>) : (
            <span className='cursor-pointer hover:opacity-75 duration-100 transition flex-shrink-0 mr-4 p-1' 
-           onClick={(e) => {
-            e.stopPropagation();
-            enableEdit();
-          }}
+           onClick={enableEdit}
            >
            <PencilLineIcon size={14} />
          </span>

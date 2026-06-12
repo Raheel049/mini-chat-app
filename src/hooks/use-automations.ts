@@ -14,7 +14,7 @@ export const useCreateAutomation = (id?: string) => {
 
 export const useEditAutomation = (automationId: string) => {
   const [edit, setEdit] = useState(false);
-  const inputRef = useRef<HTMLInputElement | null>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
   const enableEdit = () => setEdit(true);
   const disableEdit = () => setEdit(false);
 
@@ -27,15 +27,17 @@ export const useEditAutomation = (automationId: string) => {
   );
 
   useEffect(() => {
-    function handleClickOutside(this: Document, event: MouseEvent) {
-        console.log("Mouse Clicked:", event.target);
-        console.log("edit =", edit);
+   
+    function handleClickOutside(event: MouseEvent) {
+      console.log("click",inputRef.current)
+     
       if (
         inputRef.current && !inputRef.current.contains(event.target as Node | null)
       ) {
         console.log("Bahar click hua hai!");
         if (inputRef.current.value !== "") {
           mutate({ name: inputRef.current.value });
+          disableEdit()
         } else {
           disableEdit();
         }
@@ -46,7 +48,7 @@ export const useEditAutomation = (automationId: string) => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  },[edit, mutate]);
 
   return {
     edit,
