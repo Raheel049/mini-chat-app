@@ -48,7 +48,7 @@ const Trigger = ({id}: Props) => {
         ]}
         />
       </>
-        <ThenAction />
+        {/* <ThenAction /> */}
     </div>
   // }
   

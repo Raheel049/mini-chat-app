@@ -1,6 +1,8 @@
-import { createAutomations, updateAutomationName } from "@/action/automations";
+import { z } from 'zod'
+import { createAutomations, saveListener, updateAutomationName } from "@/action/automations";
 import { useMutationData } from "./use-mutation-data";
 import { useEffect, useRef, useState } from "react";
+
 
 export const useCreateAutomation = (id?: string) => {
   const { isPending, mutate } = useMutationData(
@@ -58,3 +60,16 @@ export const useEditAutomation = (automationId: string) => {
     isPending,
   };
 };
+
+export const useListner = (id: string) => {
+  const [Listener, setListner] = useState<'MESSAGE' | 'SMARTAI'>('MESSAGE')
+
+  const promptSchema = z.object({
+    prompt: z.string().min(1),
+    reply: z.string(),
+  })
+
+  const {} = useMutationData(["create-listner"], (data:{prompt:string, reply:string}) => saveListener(id, listener, data.prompt, data.reply)
+
+  )
+}
